@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,42 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+	h3{	
+		margin-top : 50px;
+		text-align:  center;
+		font-weight: bold;}
+		
+	#tbl{
+		 width: 800px;
+		 margin : 0px auto;
+		 margin-top: 50px;
+		 font-size : small;
+		 border-spacing : 0px;
+		 border-collapse: collapse; }
+		 
+	.tr1{ 						
+		height: 40px;		
+		background-color: black;
+		text-align: center;
+		color : white;
+		}
+		
+	.td1{
+		height: 40px;
+		text-align: center;
+		}
+	
+	.tr2{
+		border-bottom: 3px solid gray;}
+	
+		
+</style>
+
 </head>
+
 <body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -39,8 +75,28 @@
 </nav>
   
 <div class="container">
-  <h3>Right Aligned Navbar</h3>
-  <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
+  <h3>BoardListPage</h3>
+  	<table id ="tbl">
+		<tr class="tr1">
+			<td>Num</td>
+			<td>Title</td>
+			<td>Writer</td>
+			<td>Contents</td>
+			<td>regDate</td>
+			<td>Hit</td>
+		</tr>
+		
+		<c:forEach items="${requestScope.list}" var="dto">
+			<tr class="tr2">
+				<td class="td1">${dto.num}</td>
+				<td class="td1">${dto.title}</td>
+				<td class="td1">${dto.writer}</td>
+				<td class="td1">${dto.contents}</td>
+				<td class="td1">${dto.regdate}</td>
+				<td class="td1">${dto.hit}</td>
+			</tr>
+		</c:forEach>
+	</table>
 </div>
 </body>
 </html>

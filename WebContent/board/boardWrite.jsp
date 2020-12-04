@@ -40,7 +40,8 @@
   
 <div class="container">
   <h2>Board Write Form</h2>
-  <form action="#">
+  <form action="./boardWriteProcess.board" method="post">
+    
     <div class="form-group">
       <label for="title">Title:</label>
       <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
@@ -50,13 +51,12 @@
       <label for="writer">Writer:</label>
       <input type="text" class="form-control" id="writer" placeholder="Enter writer" name="writer">
     </div>
-    
+  
     <div class="form-group">
       <label for="contents">Contents:</label>
         <textarea class="form-control" rows="10" id="contents" name="contents"></textarea>
     </div>
-    
-    
+ 
     <button type="submit" class="btn btn-default">Write</button>
   </form>
 </div>
